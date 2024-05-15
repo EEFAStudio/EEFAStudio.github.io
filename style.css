@@ -1,0 +1,151 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #2c2c2c;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.envelope {
+    position: relative;
+    width: 300px; /* تنظیم عرض پاکت */
+    height: 200px; /* تنظیم ارتفاع پاکت */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.flap {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+    transform-origin: bottom; /* نقطه مرکزی چرخش را به پایین تصویر منتقل می‌کند */
+    transition: transform 0.3s ease;
+}
+
+
+
+/* .flap {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: #c2c2c2;
+  transition: transform 0.3s ease;
+} */
+
+.pages {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  transition: top 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  width: 34%; /* افزایش عرض برای نمایش عمودی */
+  height: 130%; /* افزایش طول بیشتر از ارتفاع کانتینر برای بزرگنمایی */
+  background: white;
+  display: none;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5; /* شفافیت اولیه برای صفحات غیرفعال */
+  overflow: auto; /* اجازه اسکرول برای محتوای بیش از حد صفحه */
+  position: relative; /* نسبی برای موقعیت‌دهی دقیق */
+  top: -10%; /* تنظیم موقعیت بالا برای جبران افزایش طول */
+}
+
+.page.active {
+  transform: scale(2.9); /* Enlarge active page */
+  opacity: 1; /* Full visibility for active page */
+}
+
+.controls {
+  position: absolute;
+  bottom: -220px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#page1 {
+  background-image: url(img/01.jpg);
+  background-size: cover;
+}
+#page2 {
+  background-image: url(img/02.jpg);
+  background-size: cover;
+  align-items: center;
+}
+#page3 {
+  background-image: url(img/03.jpg);
+  background-size: cover;
+}
+#page4 {
+  background-image: url(img/04.jpg);
+  background-size: cover;
+}
+#page5 {
+  background-image: url(img/05.jpg);
+  background-size: cover;
+}
+#page6 {
+  background-image: url(img/06.jpg);
+  background-size: cover;
+}
+#page7 {
+  background-image: url(img/07.jpg);
+  background-size: cover;
+}
+.bt-style{
+width: 100px;
+background-color: #f0c710af;
+padding: 10px;
+border-radius: 15px;
+color: #ffffff;
+border: none;
+cursor: pointer;
+transition: background-color .5s;
+
+}
+.vid{
+  margin-top: 70px;
+}
+.vid-bt{
+  width: 50px;
+  font-size: 5px;
+  /* background-color: rgb(255, 255, 255); */
+  background-color: none;
+  background: none;
+  border: none;
+  border-radius: 10px;
+ color: #ffffff;
+
+ margin-left: 27PX;
+ transition: color .5s;
+ cursor: pointer;
+
+
+}
+.vid-bt:hover{
+color: #8f8f8f;
+
+}
+.bt-style:hover{
+background-color: #8b7304af;
+}
+
+.envelope .open .flap {
+  transform: rotateX(-180deg);
+}

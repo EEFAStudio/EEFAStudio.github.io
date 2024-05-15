@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Envelope with Pages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" onclick="toggleEnvelope()">
+            <img src="img/packet.png"  class="flap">
+
+            
+            <!-- <div class="flap"></div> -->
+        </div>
+        <div class="pages">
+            <div class="page" id="page1"></div>
+            <div class="page" id="page2" > 
+                <video src="img/EFFA_SHOWREEL_V2_1403.mp4" width="100%"  controls class="vid" id="reel"></video>
+                <button onclick="playPause()" class="vid-bt">Play / Pause</button> 
+            </div>
+            <div class="page" id="page3"></div>
+            <div class="page" id="page4"></div>
+            <div class="page" id="page5"></div>
+            <div class="page" id="page6"></div>
+            <div class="page" id="page7"></div>
+        </div>
+        <div class="controls">
+            <button onclick="previousPage()" class="bt-style">Previous</button>
+            <button onclick="nextPage()" class="bt-style">Next</button>
+
+    </div>
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
